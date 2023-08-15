@@ -1,0 +1,16 @@
+
+NOTES - 
+
+
+
+TODO
+------
+[ ] Clean up docker desktop and ensure it works. 
+[ ] Work on k8/istio demo, use otel stuff. 
+[ ] see if i get both istio and otel dashboards by default.
+
+
+DONE
+====
+
+

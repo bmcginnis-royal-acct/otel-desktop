@@ -1,0 +1,36 @@
+todo
+------
+Sample metrics & traces dashboard
+
+[ ] Buy book: https://www.packtpub.com/product/cloud-native-observability-with-opentelemetry/9781801077705
+[ ] Buy book: https://www.manning.com/books/grpc-microservices-in-go
+
+[ ] great blog on metrics - https://grafana.com/docs/opentelemetry/instrumentation/java/metrics-from-traces/
+
+[ ] watch details on metrics video - https://www.youtube.com/watch?v=L-Ss8PtWlRA
+[ ] Watch on k8 yaml file setup (around 5:45)
+[ ] Watch https://www.youtube.com/watch?v=2v4yYhGgK_E OTEL java deep dive 
+[ ] Custom metric counter in dashboard
+[ ] read https://grafana.com/blog/2022/04/26/set-up-and-observe-a-spring-boot-application-with-grafana-cloud-prometheus-and-opentelemetry/
+[ ] add dashboard  metrics from https://github.com/adamquan/hello-observability/blob/main/cloud/dashboards/hello-observability.json
+
+[ ] add dashboard to project for service metrics
+
+[ ] document how log entries include traceId and how dashboard links them
+
+[ ] setup k6 tests
+[ ] grafana of k6 try this: https://grafana.com/blog/2022/04/26/set-up-and-observe-a-spring-boot-application-with-grafana-cloud-prometheus-and-opentelemetry/
+
+[ ] add aws alternative
+
+[ ] Strategy - how to use otel today, without collectors (temporary)
+[ ] Demo - otel without collectors 
+
+[ ] Templar setup see - https://grafana.com/docs/opentelemetry/instrumentation/java/metrics-from-traces/
+
+
+
+
+done 
+---
+[X] Add node graph to doc with screen shot

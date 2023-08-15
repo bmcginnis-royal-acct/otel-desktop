@@ -1,0 +1,40 @@
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    orgId: 1
+    url: http://prometheus:9090
+    basicAuth: false
+    isDefault: false
+    version: 1
+    editable: true
+ 
+  - name: Tempo
+    type: tempo
+    access: proxy
+    orgId: 1
+    url: http://tempo:3200
+    basicAuth: false
+    isDefault: false
+    version: 1
+    editable: true
+    apiVersion: 1
+    uid: tempo
+    jsonData:
+      nodeGraph:         # Enable NodeGraph visualization for traces
+        enabled: true
+
+  # This is now generated dynamically so we can use
+  # http://$IP_ADDRESS/3100 instead of http://loki:3100
+  #
+  # - name: Loki
+  #   type: loki
+  #   access: proxy
+  #   orgId: 1
+  #   url: http://loki:3100
+  #   basicAuth: false
+  #   isDefault: false
+  #   version: 1
+  #   editable: true

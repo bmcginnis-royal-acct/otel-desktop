@@ -1,0 +1,23 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:5555
+
+exporters:
+  logging:
+    loglevel: debug
+
+processors:
+  batch:
+    timeout: 1s
+    send_batch_size: 1024
+
+service:
+  pipelines:
+    metrics:
+      receivers: [otlp]
+      exporters: [logging]
+    traces:
+      receivers: [otlp]
+      exporters: [logging]

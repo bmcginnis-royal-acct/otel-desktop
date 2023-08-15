@@ -1,0 +1,80 @@
+PROBLEMS TO FIX
+-----------------
+[ ] Prometheus does not include deployment.environment in the metric!
+[ ] Remove net_protocol_name="http", net_protocol_version="1.1" from request count metric.
+
+
+[ ] The OTEL_XXX env vars provide solid defaults for Resources: deployment env, service name, etc.
+    However, they get clobbered after my Spring config bean runs? Don't need
+    the spring config for this?
+
+
+====
+Experiments
+====
+-- grafana stack --
+uses otel collector instead of their own agent...
+https://github.com/grafana/intro-to-mlt#opentelemetry-collector
+IMPORTANT: THis docker compose includes prometheus (instead of mirmir)...
+https://github.com/grafana/tempo/blob/main/example/docker-compose/otel-collector/docker-compose.yaml
+AND here https://github.com/grafana/tempo/blob/main/example/docker-compose/local/docker-compose.yaml
+
+THIS MAY BE EASIEST docker compose and collector config... but no promtail.
+
+-- best docker compose from grafana --
+https://grafana.com/docs/loki/latest/installation/docker/
+Should use this for loki and grafana docker-compose.yaml, etc.
+Has best versions of stuff.
+
+
+--PROMISING--
+https://allopensourcetech.com/integrating-spring-boot-with-opentelemetry/
+- setup pom.xml with javaagent
+- setup docker app image for deployment w/ javaagent
+- docker compose mounts volumes for promtail
+
+-- clean docker compose --
+Should try this out:
+https://github.com/ThomasVitale/spring-cloud-gateway-resilience-security-observability/blob/main/docker-compose.yml
+
+-- best architecture diagram ---
+https://juejin.cn/post/7050134410229710884
+
+-- good for collector deployment meeting ---
+https://medium.com/@magstherdev/opentelemetry-operator-d3d407354cbf
+
+
+-- LOKI --
+I got logging setup with logback from this.
+Their demo works for loki - https://levelup.gitconnected.com/spring-boot-with-grafana-loki-local-setup-included-442ebae2f599
+with src - https://github.com/polovyivan/spring-with-grafana-loki
+Mine crashes grafana when I try to connect to loki.
+
+
+
+
+TODO
+-----
+[ ] Watch Aspecto video on collectors to understand details: https://www.youtube.com/watch?v=_uKenOH1M8E
+[ ] Watch video at 6:55 regarding stdout... https://isitobservable.io/observability/kubernetes/how-to-collect-logs-in-kubernetes-with-loki-and-promtail
+[ ] Try out maven javaagent stuff - ttps://allopensourcetech.com/integrating-spring-boot-with-opentelemetry/
+[ ] Update docker-compose and collector yaml file setup.
+[ ] Add logging to demo stdout
+
+
+[ ] refactor Dockerfiles
+[ ] remove tool-config?
+[ ] fix readmes
+[ ] Add smoke tests in curl
+[ ] update k6
+
+
+DONE
+----
+[x] Update runMicroservice
+[x] Resources 'deployment.environment' not showing up in traces
+[x] Cleaner refactor to get tracer, meter injection.
+[x] Get running local
+
+[x] Get runnimg with parent docker compose
+[X] Fix resources config

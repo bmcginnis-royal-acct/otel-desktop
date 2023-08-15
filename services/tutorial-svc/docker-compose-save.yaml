@@ -1,0 +1,92 @@
+version: '3.3'
+
+services:
+
+  cart-svc:
+    container_name: cart-svc
+    build:
+      context: ./service-cart
+      dockerfile: Dockerfile
+    environment:
+      - OTEL_SERVICE_NAME=cart-svc
+      - OTEL_METRICS_EXPORTER=none
+      - OTEL_TRACES_EXPORTER=jaeger
+      - OTEL_EXPORTER_JAEGER_ENDPOINT=http://jaeger:14250
+    ports:
+      - "8080:8080"
+
+  inventory-svc:
+    container_name: inventory-svc
+    build:
+      context: ./service-inventory
+      dockerfile: Dockerfile
+    environment:
+      - OTEL_SERVICE_NAME=inventory-svc
+      - OTEL_METRICS_EXPORTER=none
+      - OTEL_TRACES_EXPORTER=jaeger
+      - OTEL_EXPORTER_JAEGER_ENDPOINT=http://jaeger:14250
+    ports:
+      - "8081:8081"
+
+  collector:
+    image: otel/opentelemetry-collector:latest
+    container_name: collector
+    hostname: collector
+    depends_on:
+      prometheus:
+        condition: service_healthy
+    command: [ "--config=/etc/collector-config.yaml" ]
+    volumes:
+      - ./tool-config/open-telemetry-collector.yaml:/etc/collector-config.yaml
+    ports:
+      - "5555:5555"
+      - "6666:6666"
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    hostname: prometheus
+    command:
+      - --config.file=/etc/prometheus.yaml
+      - --web.enable-remote-write-receiver
+      - --enable-feature=exemplar-storage
+    volumes:
+      - ./tool-config/prometheus.yaml:/etc/prometheus.yaml
+    ports:
+      - "9090:9090"
+    healthcheck:
+      interval: 5s
+      retries: 10
+      test: wget --no-verbose --tries=1 --spider http://localhost:9090/status || exit 1
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    hostname: grafana
+    depends_on:
+      prometheus:
+        condition: service_healthy
+    volumes:
+      - ./tool-config/grafana-bootstrap.ini:/etc/grafana/grafana.ini
+      - ./tool-config/grafana-datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+    ports:
+      - "3000:3000"
+    healthcheck:
+      interval: 5s
+      retries: 10
+      test: wget --no-verbose --tries=1 --spider http://localhost:3000 || exit 1
+
+  jaeger:
+    container_name: jaeger
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "16686:16686"
+      - "14250:14250"
+
+networks:
+  default:
+    name: inst-java-apps-using-otel

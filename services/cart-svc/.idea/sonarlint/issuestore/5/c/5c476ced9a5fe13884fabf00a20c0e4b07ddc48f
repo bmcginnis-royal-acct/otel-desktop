@@ -1,0 +1,7 @@
+
+r
+java:S1104"^Make logInvalidRequests a static final constant or non-public and provide accessors if needed.(ñ¡óÇ
+p
+java:S1104"WMake serviceName a static final constant or non-public and provide accessors if needed.(í¬ì‚ıÿÿÿÿ
+u
+java:S1104"\Make inventoryBaseUrl a static final constant or non-public and provide accessors if needed.(™èÓôüÿÿÿÿ

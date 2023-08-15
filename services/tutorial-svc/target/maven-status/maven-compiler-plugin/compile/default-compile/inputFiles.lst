@@ -1,0 +1,15 @@
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/repository/TutorialRepository.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/telemetry/TelemetryConsts.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/controllers/TutorialController.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/exceptions/UpstreamServiceError.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/common/CommonHeaders.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/common/MiddlewareException.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/common/MiddlewareError.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/common/ResponseBody.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/exceptions/ErrorCodes.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/TutorialMicroservice.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/common/Retry.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/service/TutorialService.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/config/EnvironmentConfig.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/common/MiddlewareValidationError.java
+/Users/bmcginnis@rccl.com/Brian/projects/otel-uplift/otel-desktop/services/tutorial-svc/src/main/java/com/rccl/otel/demos/standalone/models/Tutorial.java

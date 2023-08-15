@@ -1,0 +1,14 @@
+
+R
+java:S1128
+"<Remove this unused import 'org.springframework.boot.Banner'.(ö‡íæ
+n
+java:S1128	"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ
+r
+java:S1128"WRemove this unused import 'org.springframework.web.reactive.function.client.WebClient'.(¬à•ıÿÿÿÿ
+j
+java:S1128"TRemove this unused import 'com.rccl.otel.demos.standalone.config.EnvironmentConfig'.(íëÛ¥
+H
+java:S1135!"2Complete the task associated to this TODO comment.(ø¢“…
+E
+java:S6212#"/Declare this local variable with "var" instead.(Ì¿ ‡

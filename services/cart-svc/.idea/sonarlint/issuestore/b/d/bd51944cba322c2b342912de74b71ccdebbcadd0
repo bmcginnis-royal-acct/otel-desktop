@@ -1,0 +1,29 @@
+
+|
+java:S1488"cImmediately return this expression instead of assigning it to the temporary variable "updatedCart".(ž±«÷üÿÿÿÿ
+S
+java:S1128"?Remove this unused import 'io.opentelemetry.api.OpenTelemetry'.(þê¶í
+W
+java:S1128">Remove this unused import 'io.opentelemetry.api.trace.Tracer'.(Ùé¸ùúÿÿÿÿ
+N
+java:S1854"5Remove this useless assignment to local variable "x".(‚ ³óþÿÿÿÿ
+H
+java:S6212"/Declare this local variable with "var" instead.(‘¦ä’ÿÿÿÿÿ
+H
+java:S6212"/Declare this local variable with "var" instead.(Å‚ÉÎúÿÿÿÿ
+C
+java:S6212"/Declare this local variable with "var" instead.(ËöŠ×
+B
+java:S1172")Remove this unused method parameter "id".(Ùà¤Îøÿÿÿÿ
+O
+java:S1854";Remove this useless assignment to local variable "message".(€¾Ìž
+H
+java:S6212"/Declare this local variable with "var" instead.(‹æ˜Áþÿÿÿÿ
+?
+java:S1481"&Remove this unused "x" local variable.(‚ ³óþÿÿÿÿ
+@
+java:S1481",Remove this unused "message" local variable.(€¾Ìž
+J
+java:S1481"1Remove this unused "responseBody" local variable.(‹æ˜Áþÿÿÿÿ
+I
+java:S1144"0Remove this unused private "handleError" method.(Ùà¤Îøÿÿÿÿ

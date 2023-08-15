@@ -1,0 +1,29 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+positions:
+  filename: /tmp/positions.yaml
+clients:
+  # If running in docker compose, use http://loki:3100... 
+  # - url: http://loki:3100/loki/api/v1/push
+
+  # If running promtail as local app, use http://localhost:3100
+  - url: http://localhost:3100/loki/api/v1/push
+scrape_configs:
+  - job_name: tutorial-app
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          user: ${USER}
+          env: dev
+          job: dev-desktop-logs
+          __path__: ${APP_LOG_DIR:-../log/*.log}
+          #
+          # __path__: ../log/*.log}
+          #
+          # if runnning local (not in docker-compose) use path to app's log files.
+          # __path__: ../services/tutorial-svc/logs/*.log
+          #
+          # If running in docker compose, use mounted /var/rcl-logs for log file path.
+          # __path__: /var/rcl-logs/*log
